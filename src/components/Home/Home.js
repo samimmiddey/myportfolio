@@ -51,7 +51,7 @@ const Home = () => {
                   marginTop: '7rem',
                   gridTemplateColumns: 'none',
                   gridTemplateRows: '1fr 1fr',
-                  rowGap: '1rem'
+                  rowGap: '2rem'
                }
             })}
          >
@@ -62,6 +62,7 @@ const Home = () => {
                   alignItems: 'flex-start',
                   rowGap: '2rem',
                   [theme.breakpoints.down('sm')]: {
+                     rowGap: '1.5rem'
                   }
                })}
             >
@@ -80,7 +81,7 @@ const Home = () => {
                         fontSize: '2rem'
                      },
                      [theme.breakpoints.down('sm')]: {
-                        fontSize: '1.5rem'
+                        // fontSize: '1.5rem'
                      }
                   })}
                >
@@ -107,7 +108,8 @@ const Home = () => {
                         fontSize: '13px'
                      },
                      [theme.breakpoints.down('sm')]: {
-                        fontSize: '12px'
+                        fontSize: '12px',
+                        marginTop: '-8px'
                      }
                   })}
                >
