@@ -3,6 +3,7 @@ import { UIContextProvider } from './components/context/ui-context';
 import Navigation from './components/Navigation/Navigation';
 import './index.css';
 import Home from './components/Home/Home';
+import About from './components/About/About';
 
 const theme = createTheme({
 	breakpoints: {
@@ -54,6 +55,7 @@ const App = () => {
 				<Box>
 					<Navigation />
 					<Home />
+					<About />
 				</Box>
 			</ThemeProvider>
 		</UIContextProvider>

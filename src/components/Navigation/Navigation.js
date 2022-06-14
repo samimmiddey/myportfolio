@@ -32,7 +32,8 @@ const Navigation = () => {
             left: 0,
             right: 0,
             backgroundColor: '#fff',
-            boxShadow: `${scrolled ? '0px 2px 10px -2px rgba(0, 0, 0, 0.2)' : ''}`
+            boxShadow: `${scrolled ? '0px 2px 10px -2px rgba(0, 0, 0, 0.2)' : ''}`,
+            zIndex: 99
          }}
       >
          <Box
@@ -80,7 +81,7 @@ const Navigation = () => {
                      onClick={() => context.toggleDrawer()}
                      size='medium'
                      sx={{
-                        "&:hover": { backgroundColor: " #ece6fe" }
+                        "&:hover": { backgroundColor: "#ece6fe" }
                      }}
                   >
                      <MenuIcon

@@ -12,7 +12,7 @@ const Home = () => {
    const theme = useTheme();
    const xlWidth = useMediaQuery(theme.breakpoints.down('xl'));
    const mdWidth = useMediaQuery(theme.breakpoints.down('md'));
-   const smWidth = useMediaQuery(theme.breakpoints.down('sm'));
+   const smWidth = useMediaQuery(theme.breakpoints.down(500));
 
    const height = xlWidth && !mdWidth ? '45px' : xlWidth && mdWidth ? '40px' : '50px';
 
