@@ -1,16 +1,16 @@
 import React from 'react';
-import html from '../../assets/html.png';
-import css from '../../assets/css.png';
-import js from '../../assets/js.png';
-import scss from '../../assets/scss.png';
-import react from '../../assets/react.png';
-import redux from '../../assets/redux.png';
-import mui from '../../assets/mui.png';
-import git from '../../assets/git.png';
-import github from '../../assets/github.png';
-import node from '../../assets/node.png';
-import figma from '../../assets/figma.png';
-import firebase from '../../assets/firebase.png';
+import html from '../../assets/skills/html.png';
+import css from '../../assets/skills/css.png';
+import js from '../../assets/skills/js.png';
+import scss from '../../assets/skills/scss.png';
+import react from '../../assets/skills/react.png';
+import redux from '../../assets/skills/redux.png';
+import mui from '../../assets/skills/mui.png';
+import git from '../../assets/skills/git.png';
+import github from '../../assets/skills/github.png';
+import node from '../../assets/skills/node.png';
+import figma from '../../assets/skills/figma.png';
+import firebase from '../../assets/skills/firebase.png';
 import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 const icons = [html, css, js, scss, react, redux, mui, node, figma, git, github, firebase];
@@ -18,7 +18,7 @@ const icons = [html, css, js, scss, react, redux, mui, node, figma, git, github,
 const colors = ['#fbe8ce', '#def7fe', '#FAF4B7', '#FEE3EC', '#E4FBFF', '#F6E5F5', '#D6E5FA', '#E6F8F9', '#F6DFEB', '#FFDFD3', '#F4F3F3', '#FFF7BC'];
 
 const skillsText = [
-   "I work with modern technologies that include HTML5, CSS3, SCSS, JavaScript, Material UI, React, Node, Redux, Redux Toolkit, Git etc.",
+   "I work with modern technologies that include HTML5, CSS3, SCSS, JavaScript, Material UI, React JS, Redux, Redux Toolkit, Node, Git, Firebase etc.",
    "I have a good sense of aesthetics and experience in responsive web design. I put special efforts into optimizing the code and providing the best user experience possible."
 ];
 
@@ -31,22 +31,23 @@ const Skills = () => {
 
    return (
       <Box
+         id='skills'
          className='container'
          sx={theme => ({
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
             columnGap: '15rem',
-            padding: '10rem 2rem',
+            padding: '9rem 2rem',
             [theme.breakpoints.down('xl')]: {
-               padding: '9rem 2rem',
+               padding: '8rem 2rem',
                columnGap: '8rem'
             },
             [theme.breakpoints.down('lg')]: {
-               padding: '8rem 2rem',
+               padding: '7rem 2rem',
                columnGap: '5rem'
             },
             [theme.breakpoints.down('md')]: {
-               padding: '7rem 2rem',
+               padding: '6rem 2rem',
                columnGap: '3rem'
             },
             [theme.breakpoints.down('sm')]: {

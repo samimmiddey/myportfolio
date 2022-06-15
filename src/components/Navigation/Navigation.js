@@ -25,7 +25,7 @@ const Navigation = () => {
 
    return (
       <Box
-         sx={{
+         sx={theme => ({
             position: 'fixed',
             height: '70px',
             top: 0,
@@ -33,8 +33,11 @@ const Navigation = () => {
             right: 0,
             backgroundColor: '#fff',
             boxShadow: `${scrolled ? '0px 2px 10px -2px rgba(0, 0, 0, 0.2)' : ''}`,
-            zIndex: 99
-         }}
+            zIndex: 99,
+            [theme.breakpoints.down('sm')]: {
+               height: '60px'
+            }
+         })}
       >
          <Box
             className='container'

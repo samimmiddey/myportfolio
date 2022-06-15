@@ -1,11 +1,11 @@
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react';
-import html from '../../assets/html.png';
-import css from '../../assets/css.png';
-import js from '../../assets/js.png';
-import react from '../../assets/react.png';
-import redux from '../../assets/redux.png';
-import mui from '../../assets/mui.png';
+import html from '../../assets/skills/html.png';
+import css from '../../assets/skills/css.png';
+import js from '../../assets/skills/js.png';
+import react from '../../assets/skills/react.png';
+import redux from '../../assets/skills/redux.png';
+import mui from '../../assets/skills/mui.png';
 import PrimaryButton from '../UI/PrimaryButton';
 import SendIcon from '@mui/icons-material/Send';
 
@@ -27,6 +27,7 @@ const About = () => {
 
    return (
       <Box
+         id='about'
          sx={{
             position: 'relative'
          }}
@@ -35,21 +36,21 @@ const About = () => {
             className='container'
             sx={theme => ({
                marginTop: '15rem',
-               padding: '10rem 2rem',
+               padding: '9rem 2rem',
                display: 'grid',
                gridTemplateColumns: 'repeat(2, 1fr)',
                minHeight: '100px',
                [theme.breakpoints.down('xl')]: {
                   marginTop: '12rem',
-                  padding: '9rem 2rem',
+                  padding: '8rem 2rem',
                },
                [theme.breakpoints.down('lg')]: {
                   marginTop: '10rem',
-                  padding: '8rem 2rem',
+                  padding: '7rem 2rem',
                },
                [theme.breakpoints.down('md')]: {
                   marginTop: '8rem',
-                  padding: '7rem 2rem'
+                  padding: '6rem 2rem'
                },
                [theme.breakpoints.down('sm')]: {
                   marginTop: '6rem',
@@ -179,7 +180,7 @@ const About = () => {
                <PrimaryButton
                   text='Contact Me'
                   height={height}
-                  icon={<SendIcon sx={{ marginLeft: '10px' }} />}
+                  icon={<SendIcon sx={{ marginLeft: '10px', fontSize: '1.3rem' }} />}
                />
             </Box>
          </Box>

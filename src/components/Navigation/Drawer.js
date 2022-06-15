@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import { IconButton, List, ListItemButton, styled, Typography } from '@mui/material';
@@ -24,7 +24,7 @@ const navigation = [
       icon: <SettingsOutlinedIcon sx={{ color: 'text.secondary' }} />
    },
    {
-      text: 'PROJECTS',
+      text: 'PORTFOLIO',
       icon: <VisibilityOutlinedIcon sx={{ color: 'text.secondary' }} />
    },
    {
@@ -45,6 +45,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 const CustomizedDrawer = () => {
+   const [active, setActive] = useState(0);
    const { showDrawer, toggleDrawer } = useContext(uiContext);
 
    return (
@@ -99,35 +100,43 @@ const CustomizedDrawer = () => {
                      }}
                   >
                      {navigation.map((item, index) => (
-                        <ListItemButton
-                           onClick={() => toggleDrawer()}
-                           onKeyDown={() => toggleDrawer()}
-                           className='nav-list'
+                        <a
+                           href={`#${item.text.toLowerCase()}`}
                            key={index}
-                           sx={theme => ({
-                              display: 'flex',
-                              alignItems: 'center',
-                              padding: '1rem 2rem',
-                              columnGap: '2rem',
-                              [theme.breakpoints.down('sm')]: {
-                                 padding: '1rem 1.5rem',
-                                 columnGap: '1.5rem'
-                              },
-                              "&:hover": { backgroundColor: "#ece6fe" }
-                           })}
+                           onClick={() => setActive(index)}
                         >
-                           {item.icon}
-                           <Typography
-                              sx={{
-                                 fontSize: '13px',
-                                 fontWeight: 600,
-                                 color: 'text.secondary',
-                                 transition: '0.3s'
-                              }}
+                           <ListItemButton
+                              onClick={() => toggleDrawer()}
+                              onKeyDown={() => toggleDrawer()}
+                              className='nav-list'
+                              sx={theme => ({
+                                 display: 'flex',
+                                 alignItems: 'center',
+                                 padding: '1rem 2rem',
+                                 columnGap: '2rem',
+                                 backgroundColor: index === active && '#ece6fe',
+                                 [theme.breakpoints.down('sm')]: {
+                                    padding: '1rem 1.5rem',
+                                    columnGap: '1.5rem'
+                                 },
+                                 "& > *": {
+                                    color: index === active ? '#784cfb' : 'text.secondary',
+                                 },
+                                 "&:hover": { backgroundColor: "#ece6fe" }
+                              })}
                            >
-                              {item.text}
-                           </Typography>
-                        </ListItemButton>
+                              {item.icon}
+                              <Typography
+                                 sx={{
+                                    fontSize: '13px',
+                                    fontWeight: 600,
+                                    transition: '0.3s'
+                                 }}
+                              >
+                                 {item.text}
+                              </Typography>
+                           </ListItemButton>
+                        </a>
                      ))}
                   </List>
                </Box>

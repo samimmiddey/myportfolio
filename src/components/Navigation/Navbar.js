@@ -1,11 +1,13 @@
 import { Box, List, ListItem, Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import PrimaryButton from '../UI/PrimaryButton';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
-const navigation = ['HOME', 'ABOUT', 'SKILLS', 'PROJECTS', 'CONTACT'];
+const navigation = ['HOME', 'ABOUT', 'SKILLS', 'PORTFOLIO', 'CONTACT'];
 
 const Navbar = () => {
+   const [active, setActive] = useState(0);
+
    return (
       <Box
          sx={theme => ({
@@ -34,26 +36,31 @@ const Navbar = () => {
             })}
          >
             {navigation.map((item, index) => (
-               <ListItem
+               <a
+                  href={`#${item.toLowerCase()}`}
                   key={index}
-                  sx={{
-                     borderRadius: '5px'
-                  }}
+                  onClick={() => setActive(index)}
                >
-                  <Typography
+                  <ListItem
                      sx={{
-                        fontSize: '13px',
-                        fontWeight: 600,
-                        color: 'text.secondary',
-                        transition: '0.3s',
-                        '&:hover': {
-                           color: '#784cfb'
-                        }
+                        borderRadius: '5px'
                      }}
                   >
-                     {item}
-                  </Typography>
-               </ListItem>
+                     <Typography
+                        sx={{
+                           fontSize: '13px',
+                           fontWeight: 600,
+                           color: index === active ? '#784cfb' : 'text.secondary',
+                           transition: '0.3s',
+                           '&:hover': {
+                              color: '#784cfb'
+                           }
+                        }}
+                     >
+                        {item}
+                     </Typography>
+                  </ListItem>
+               </a>
             ))}
          </List>
          <DarkModeOutlinedIcon

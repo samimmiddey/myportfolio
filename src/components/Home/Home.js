@@ -30,25 +30,26 @@ const Home = () => {
 
    return (
       <Box
+         id='home'
          className='container'
       >
          <Box
             sx={theme => ({
-               marginTop: '13rem',
+               paddingTop: '13rem',
                display: 'grid',
                gridTemplateColumns: 'repeat(2, 1fr)',
                alignItems: 'center',
                [theme.breakpoints.down('xl')]: {
-                  marginTop: '12rem',
+                  paddingTop: '12rem',
                },
                [theme.breakpoints.down('lg')]: {
-                  marginTop: '10rem',
+                  paddingTop: '10rem',
                },
                [theme.breakpoints.down('md')]: {
-                  marginTop: '9rem',
+                  paddingTop: '9rem',
                },
                [theme.breakpoints.down('sm')]: {
-                  marginTop: '7rem',
+                  paddingTop: '7rem',
                   gridTemplateColumns: 'none',
                   gridTemplateRows: '1fr 1fr',
                   rowGap: '2rem'

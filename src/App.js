@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import Skills from './components/Skills/Skills';
 import Services from './components/Services/Services';
+import Portfolio from './components/Portfolio/Portfolio';
 
 const theme = createTheme({
 	breakpoints: {
@@ -20,10 +21,10 @@ const theme = createTheme({
 	},
 	palette: {
 		primary: {
-			main: 'rgb(90, 57, 161)',
+			main: '#784cfb',
 		},
 		secondary: {
-			main: 'rgb(132, 76, 196)',
+			main: '#6039d6',
 		},
 	},
 	typography: {
@@ -60,6 +61,7 @@ const App = () => {
 					<About />
 					<Skills />
 					<Services />
+					<Portfolio />
 				</Box>
 			</ThemeProvider>
 		</UIContextProvider>

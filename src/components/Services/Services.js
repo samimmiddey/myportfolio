@@ -18,7 +18,7 @@ const skillsDetails = [
    },
    {
       title: 'React Developer',
-      description: "I build web applications using React and many other modern front end technologies",
+      description: "I build web applications using React JS and many other modern front end technologies",
       icon: development
    },
    {
@@ -31,6 +31,7 @@ const skillsDetails = [
 const Services = () => {
    return (
       <Box
+         id='service'
          sx={{
             position: 'relative'
          }}
@@ -38,25 +39,25 @@ const Services = () => {
          <Box
             className='container'
             sx={theme => ({
-               padding: '10rem 2rem',
+               padding: '9rem 2rem',
                display: 'flex',
                flexDirection: 'column',
-               rowGap: '5rem',
+               rowGap: '3rem',
                [theme.breakpoints.down('xl')]: {
-                  padding: '9rem 2rem',
-                  rowGap: '4.5rem'
+                  padding: '8rem 2rem',
+                  rowGap: '2.75rem'
                },
                [theme.breakpoints.down('lg')]: {
-                  padding: '8rem 2rem',
-                  rowGap: '4rem'
+                  padding: '7rem 2rem',
+                  rowGap: '2.5rem'
                },
                [theme.breakpoints.down('md')]: {
-                  padding: '7rem 2rem',
-                  rowGap: '3.5rem'
+                  padding: '6rem 2rem',
+                  rowGap: '2.25rem'
                },
                [theme.breakpoints.down('sm')]: {
                   padding: '5rem 1rem',
-                  rowGap: '3rem'
+                  rowGap: '2rem'
                }
             })}
          >
@@ -128,9 +129,39 @@ const Services = () => {
                   </Typography>
                </Box>
             </Box>
-            <Grid container spacing={2}>
+            <Grid
+               container
+               sx={theme => ({
+                  width: '90%',
+                  margin: '0 auto',
+                  [theme.breakpoints.down('lg')]: {
+                     width: '100%'
+                  },
+                  [theme.breakpoints.down('sm')]: {
+                     width: '70%'
+                  },
+                  [theme.breakpoints.down(500)]: {
+                     width: '90%'
+                  },
+                  [theme.breakpoints.down(350)]: {
+                     width: '100%'
+                  }
+               })}
+            >
                {skillsDetails.map((item, index) => (
-                  <Grid item key={index} xs={12} xm={12} sm={6} md={4} lg={3} xl={3}>
+                  <Grid
+                     item
+                     key={index}
+                     xs={12} xm={12} sm={6} md={4} lg={3} xl={3}
+                     sx={theme => ({
+                        display: 'flex',
+                        justifyContent: 'center',
+                        padding: '1rem 8px',
+                        [theme.breakpoints.down('lg')]: {
+                           padding: '8px'
+                        }
+                     })}
+                  >
                      <Card
                         elevation={0}
                         sx={theme => ({
@@ -140,7 +171,10 @@ const Services = () => {
                            alignItems: 'center',
                            justifyContent: 'center',
                            rowGap: '1rem',
+                           border: '1px solid #f0f0ff',
                            transition: '0.3s ease',
+                           backgroundColor: '#f0f0ff',
+                           boxShadow: '0 0 10px 0px rgba(120, 76, 251, 0.3)',
                            '&:hover': {
                               boxShadow: '0 0 20px 0px #784cfb'
                            },
@@ -163,13 +197,10 @@ const Services = () => {
                            sx={theme => ({
                               color: 'text.disabled',
                               fontWeight: 500,
-                              fontSize: '16px',
+                              fontSize: '14px',
                               textAlign: 'center',
-                              [theme.breakpoints.down('lg')]: {
-                                 fontSize: '15px'
-                              },
                               [theme.breakpoints.down('sm')]: {
-                                 fontSize: '14px'
+                                 fontSize: '13px'
                               }
                            })}
                         >
