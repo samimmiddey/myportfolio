@@ -115,16 +115,6 @@ const Home = () => {
                >
                   {!smWidth && 'WEB DESIGNER |'} FRONT END DEVELOPER
                </Typography>
-               {/* <Typography
-                  sx={{
-                     color: 'text.disabled',
-                     width: '70%',
-                     fontWeight: 500,
-                     marginBottom: '1rem'
-                  }}
-               >
-                  Hi, I'm Samim Middey, web designer and developer. I make websites using various modern technologies!
-               </Typography> */}
                <PrimaryButton
                   text='Download CV'
                   height={height}
