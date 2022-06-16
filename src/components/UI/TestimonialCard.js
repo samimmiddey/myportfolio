@@ -129,7 +129,7 @@ const TestimonialCard = ({ data }) => {
             sx={theme => ({
                marginTop: '1rem',
                [theme.breakpoints.down('sm')]: {
-                  marginTop: '10px'
+                  marginTop: '12px'
                }
             })}
          >

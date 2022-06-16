@@ -210,3 +210,10 @@ ul {
 .testimonial-card:hover .testimonial-img {
   box-shadow: 0 0 20px 0px #784cfb;
 }
+
+/* Contact Section */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}

@@ -172,9 +172,9 @@ const Services = () => {
                            alignItems: 'center',
                            justifyContent: 'center',
                            rowGap: '1rem',
-                           border: '1px solid #f0f0ff',
+                           border: '1px solid #fff',
                            transition: '0.3s ease',
-                           backgroundColor: '#f0f0ff',
+                           backgroundColor: '#fff',
                            boxShadow: '0 0 10px 0px rgba(120, 76, 251, 0.3)',
                            '&:hover': {
                               boxShadow: '0 0 20px 0px #784cfb'
@@ -211,7 +211,7 @@ const Services = () => {
                   </Grid>
                ))}
             </Grid>
-         </Box >
+         </Box>
          <Box
             sx={{
                position: 'absolute',

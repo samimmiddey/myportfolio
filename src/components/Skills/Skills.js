@@ -18,7 +18,7 @@ const icons = [html, css, js, scss, react, redux, mui, node, figma, git, github,
 const colors = ['#fbe8ce', '#def7fe', '#FAF4B7', '#FEE3EC', '#E4FBFF', '#F6E5F5', '#D6E5FA', '#E6F8F9', '#F6DFEB', '#FFDFD3', '#F4F3F3', '#FFF7BC'];
 
 const skillsText = [
-   "I work with modern technologies that include HTML5, CSS3, SCSS, JavaScript, Material UI, React JS, Redux, Redux Toolkit, Node, Git, Firebase etc.",
+   "I work with modern technologies that include HTML5, CSS3, SCSS, JavaScript, Material UI, React JS, Redux, Redux Toolkit, Node JS, Git, Firebase etc.",
    "I have a good sense of aesthetics and experience in responsive web design. I put special efforts into optimizing the code and providing the best user experience possible."
 ];
 
