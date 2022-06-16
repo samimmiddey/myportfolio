@@ -14,6 +14,7 @@ const PortfolioCard = ({ details }) => {
          // sx={{maxWidth: '350px'}}
          sx={{
             transition: '0.3s ease',
+            border: '1px solid #fff',
             boxShadow: '0 0 10px 0px rgba(120, 76, 251, 0.3)',
             '&:hover': {
                boxShadow: '0 0 20px 0px #784cfb'
@@ -66,28 +67,32 @@ const PortfolioCard = ({ details }) => {
                   columnGap: '10px'
                }}
             >
-               <Button
-                  size={smWidth ? 'small' : 'medium'}
-                  disableElevation
-                  variant='outlined'
-                  sx={{
-                     textTransform: 'none'
-                  }}
-               >
-                  Code
-                  <GitHubIcon sx={{ marginLeft: '8px', fontSize: '1.25rem' }} />
-               </Button>
-               <Button
-                  size={smWidth ? 'small' : 'medium'}
-                  disableElevation
-                  variant='outlined'
-                  sx={{
-                     textTransform: 'none'
-                  }}
-               >
-                  Demo
-                  <VisibilityOutlinedIcon sx={{ marginLeft: '8px', fontSize: '1.25rem' }} />
-               </Button>
+               <a href={details.git} target='_blank' rel="noreferrer">
+                  <Button
+                     size={smWidth ? 'small' : 'medium'}
+                     disableElevation
+                     variant='outlined'
+                     sx={{
+                        textTransform: 'none'
+                     }}
+                  >
+                     Code
+                     <GitHubIcon sx={{ marginLeft: '8px', fontSize: '1.25rem' }} />
+                  </Button>
+               </a>
+               <a href={details.demo} target='_blank' rel="noreferrer">
+                  <Button
+                     size={smWidth ? 'small' : 'medium'}
+                     disableElevation
+                     variant='outlined'
+                     sx={{
+                        textTransform: 'none'
+                     }}
+                  >
+                     Demo
+                     <VisibilityOutlinedIcon sx={{ marginLeft: '8px', fontSize: '1.25rem' }} />
+                  </Button>
+               </a>
             </Box>
          </CardContent>
       </Card>

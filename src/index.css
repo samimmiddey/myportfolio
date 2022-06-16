@@ -166,3 +166,47 @@ ul {
     transform: rotateX(90deg);
   }
 }
+
+/* Testimonial Slider CSS */
+.swiper-container {
+  position: relative;
+}
+
+.swiper-container .swiper-button-container {
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.swiper-container .swiper-button {
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  .swiper-container .swiper-button {
+    height: 35px;
+    width: 35px;
+  }
+
+  .swiper-container .swiper-button-container {
+    bottom: -35px;
+  }
+}
+
+.card-swiper .swiper {
+  width: 100%;
+}
+
+.testimonial-card:hover .testimonial-img {
+  box-shadow: 0 0 20px 0px #784cfb;
+}

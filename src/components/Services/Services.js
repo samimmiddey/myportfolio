@@ -134,6 +134,7 @@ const Services = () => {
                sx={theme => ({
                   width: '90%',
                   margin: '0 auto',
+                  justifyContent: 'center',
                   [theme.breakpoints.down('lg')]: {
                      width: '100%'
                   },
@@ -156,9 +157,9 @@ const Services = () => {
                      sx={theme => ({
                         display: 'flex',
                         justifyContent: 'center',
-                        padding: '1rem 8px',
+                        padding: '1rem 10px',
                         [theme.breakpoints.down('lg')]: {
-                           padding: '8px'
+                           padding: '10px'
                         }
                      })}
                   >

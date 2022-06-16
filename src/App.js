@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Skills from './components/Skills/Skills';
 import Services from './components/Services/Services';
 import Portfolio from './components/Portfolio/Portfolio';
+import Testimonial from './components/Testimonial/Testimonial';
 
 const theme = createTheme({
 	breakpoints: {
@@ -62,6 +63,7 @@ const App = () => {
 					<Skills />
 					<Services />
 					<Portfolio />
+					<Testimonial />
 				</Box>
 			</ThemeProvider>
 		</UIContextProvider>

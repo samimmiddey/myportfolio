@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Button, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import dashboard from '../../assets/projects/dashboard.jpg';
 import ecommerce from '../../assets/projects/ecommerce.jpg';
@@ -6,11 +6,11 @@ import PortfolioCard from '../UI/PortfolioCard';
 
 const buttonText = ['All', 'UI/UX', 'React JS', 'Web App'];
 
-const projectDetails = [
+const projects = [
    {
       img: ecommerce,
       title: 'Ecommerce Website',
-      category: ['REACT JS', 'ALL'],
+      categories: ['REACT JS', 'ALL'],
       description: 'A modern ecommerce website built using React JS, Redux Toolkit, Material UI, Commerce JS, Firebase & much more!',
       demo: 'https://shopcult.netlify.app',
       git: 'https://github.com/samimmiddey/shopcult'
@@ -18,7 +18,7 @@ const projectDetails = [
    {
       img: dashboard,
       title: 'Admin Dashboard',
-      category: ['REACT JS', 'ALL', 'UI/UX'],
+      categories: ['REACT JS', 'ALL', 'UI/UX'],
       description: 'A modern admin dashboard built using React JS, Redux Toolkit, Material UI, Firebase Authentication, Recharts & much more!',
       demo: 'https://myreactadminpanel.netlify.app',
       git: 'https://github.com/samimmiddey/react-admin'
@@ -26,7 +26,7 @@ const projectDetails = [
    {
       img: ecommerce,
       title: 'Ecommerce Website',
-      category: ['REACT JS', 'ALL'],
+      categories: ['REACT JS', 'ALL'],
       description: 'A modern ecommerce website built using React JS, Redux Toolkit, Material UI, Commerce JS, Firebase & much more!',
       demo: 'https://shopcult.netlify.app',
       git: 'https://github.com/samimmiddey/shopcult'
@@ -34,7 +34,7 @@ const projectDetails = [
    {
       img: dashboard,
       title: 'Admin Dashboard',
-      category: ['REACT JS', 'ALL', 'UI/UX'],
+      categories: ['REACT JS', 'ALL', 'UI/UX'],
       description: 'A modern admin dashboard built using React JS, Redux Toolkit, Material UI, Firebase Authentication, Recharts & much more!',
       demo: 'https://myreactadminpanel.netlify.app',
       git: 'https://github.com/samimmiddey/react-admin'
@@ -42,6 +42,13 @@ const projectDetails = [
 ];
 
 const Portfolio = () => {
+   const [category, setCategory] = useState({
+      value: 'all',
+      index: 0
+   });
+
+   const filteredProjects = projects.filter((project) => project.categories.includes(category.value.toUpperCase()));
+
    const theme = useTheme();
    const smWidth = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -151,12 +158,17 @@ const Portfolio = () => {
          >
             {buttonText.map((text, index) => (
                <Button
+                  onClick={() => setCategory({ value: text, index: index })}
                   size={smWidth ? 'small' : 'medium'}
                   key={index}
                   variant='contained'
                   disableElevation
                   sx={{
-                     textTransform: 'none'
+                     textTransform: 'none',
+                     backgroundColor: category.index === index ? 'rgb(120, 76, 251)' : 'rgba(120, 76, 251, 0.75)',
+                     '&:hover': {
+                        background: category.index !== index && 'rgba(120, 76, 251, 0.75)'
+                     }
                   }}
                >
                   {text}
@@ -183,7 +195,7 @@ const Portfolio = () => {
                }
             })}
          >
-            {projectDetails.map((project, index) => (
+            {filteredProjects.map((project, index) => (
                <Grid
                   item
                   key={index}
@@ -191,9 +203,9 @@ const Portfolio = () => {
                   sx={theme => ({
                      display: 'flex',
                      justifyContent: 'center',
-                     padding: '1rem 8px',
+                     padding: '1rem 10px',
                      [theme.breakpoints.down('lg')]: {
-                        padding: '8px'
+                        padding: '10px'
                      }
                   })}
                >
@@ -204,7 +216,7 @@ const Portfolio = () => {
                </Grid>
             ))}
          </Grid>
-      </Box>
+      </Box >
    );
 };
 
