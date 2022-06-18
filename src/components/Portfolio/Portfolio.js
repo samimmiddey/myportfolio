@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Button, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import dashboard from '../../assets/projects/dashboard.jpg';
 import ecommerce from '../../assets/projects/ecommerce.jpg';
+import plantex from '../../assets/projects/plantex.jpg';
 import PortfolioCard from '../UI/PortfolioCard';
 
 const buttonText = ['All', 'UI/UX', 'React JS', 'Web App'];
@@ -24,12 +25,12 @@ const projects = [
       git: 'https://github.com/samimmiddey/react-admin'
    },
    {
-      img: ecommerce,
-      title: 'Ecommerce Website',
-      categories: ['REACT JS', 'ALL'],
-      description: 'A modern ecommerce website built using React JS, Redux Toolkit, Material UI, Commerce JS, Firebase & much more!',
-      demo: 'https://shopcult.netlify.app',
-      git: 'https://github.com/samimmiddey/shopcult'
+      img: plantex,
+      title: 'Static Website',
+      categories: ['REACT JS', 'ALL', 'UI/UX'],
+      description: 'A modern single page static website with cool javascript animation, created with plain HTML, CSS, Javascript & Scrollreveal!',
+      demo: 'https://plantex-site.netlify.app',
+      git: 'https://github.com/samimmiddey/Plantex'
    },
    {
       img: dashboard,

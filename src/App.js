@@ -10,6 +10,8 @@ import Portfolio from './components/Portfolio/Portfolio';
 import Testimonial from './components/Testimonial/Testimonial';
 import Contact from './components/Contact/Contact';
 import SuccessSnackbar from './components/UI/SuccessSnackbar';
+import Footer from './components/Footer/Footer';
+import BackToTop from './components/UI/BackToTop';
 
 const theme = createTheme({
 	breakpoints: {
@@ -67,7 +69,9 @@ const App = () => {
 					<Portfolio />
 					<Testimonial />
 					<Contact />
+					<Footer />
 					<SuccessSnackbar />
+					<BackToTop />
 				</Box>
 			</ThemeProvider>
 		</UIContextProvider>

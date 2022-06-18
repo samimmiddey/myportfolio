@@ -21,6 +21,11 @@ const GoogleMap = () => {
                zIndex: 999,
                [theme.breakpoints.down(500)]: {
                   padding: '14px'
+               },
+               [theme.breakpoints.down(350)]: {
+                  top: '65%',
+                  left: '10px',
+                  padding: '12px'
                }
             })}
          >

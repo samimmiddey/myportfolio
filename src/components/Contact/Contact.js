@@ -32,6 +32,10 @@ const Contact = () => {
             [theme.breakpoints.down('sm')]: {
                padding: '5rem 1rem',
                rowGap: '2rem'
+            },
+            [theme.breakpoints.down(350)]: {
+               padding: '5rem 0',
+               rowGap: '2rem'
             }
          })}
       >

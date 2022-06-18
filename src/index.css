@@ -32,7 +32,8 @@ ul {
 }
 
 /* Utility Classes */
-.primary-button {
+.primary-button,
+.primary-background {
   background-image: linear-gradient(to right, #784cfb 0%, #6039d6 51%, #784cfb 100%);
   background-size: 200% auto;
 }
@@ -216,4 +217,43 @@ ul {
   width: 100%;
   height: 100%;
   border-radius: 10px;
+}
+
+/* ShopFilter Scrollbar */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.025);
+  height: 100px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.nav-glass {
+  background: rgba(255, 255, 255, 0.25);
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow: 0 3px 30px -3px rgba(120, 76, 251, 0.5);
+}
+
+@media screen and (max-width: 950px) {
+  .nav-glass {
+    box-shadow: 0 2px 20px -2px rgba(120, 76, 251, 0.5);
+  }
 }

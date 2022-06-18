@@ -33,7 +33,7 @@ const Services = () => {
       <Box
          id='service'
          sx={{
-            position: 'relative'
+            backgroundColor: '#f8f6fe'
          }}
       >
          <Box
@@ -213,19 +213,6 @@ const Services = () => {
                ))}
             </Grid>
          </Box>
-         <Box
-            sx={{
-               position: 'absolute',
-               top: 0,
-               left: 0,
-               right: 0,
-               bottom: 0,
-               height: '100%',
-               width: '100%',
-               backgroundColor: '#f8f6fe',
-               zIndex: -1
-            }}
-         />
       </Box>
    );
 };

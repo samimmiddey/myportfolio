@@ -54,6 +54,9 @@ const CustomizedDrawer = () => {
             anchor={'right'}
             open={showDrawer}
             onClose={() => toggleDrawer()}
+            sx={{
+               zIndex: 99999
+            }}
          >
             <Box
                sx={theme => ({

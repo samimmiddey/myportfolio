@@ -7,7 +7,7 @@ import { uiContext } from '../context/ui-context';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
 const Navigation = () => {
-   const [scrolled, setScrolled] = useState(false);
+   const [navClass, setNavClass] = useState('');
    const context = useContext(uiContext);
 
    const theme = useTheme();
@@ -16,24 +16,25 @@ const Navigation = () => {
    useEffect(() => {
       window.onscroll = function () {
          if (window.scrollY > 50) {
-            setScrolled(true);
+            setNavClass('nav-glass');
          } else {
-            setScrolled(false);
+            setNavClass('');
          }
       };
    }, []);
 
    return (
       <Box
+         className={navClass || ''}
          sx={theme => ({
             position: 'fixed',
             height: '70px',
             top: 0,
             left: 0,
             right: 0,
-            backgroundColor: '#fff',
-            boxShadow: `${scrolled ? '0px 2px 10px -2px rgba(0, 0, 0, 0.2)' : ''}`,
-            zIndex: 99,
+            backgroundColor: !navClass && '#fff',
+            zIndex: 9999,
+
             [theme.breakpoints.down('sm')]: {
                height: '60px'
             }
@@ -82,14 +83,16 @@ const Navigation = () => {
                   />
                   <IconButton
                      onClick={() => context.toggleDrawer()}
-                     size='medium'
+                     size='small'
                      sx={{
+                        backgroundColor: '#784cfb',
                         "&:hover": { backgroundColor: "#ece6fe" }
                      }}
                   >
                      <MenuIcon
                         sx={{
-                           color: '#text.secondary',
+                           color: '#fff',
+                           fontSize: '1.2rem',
                            '&:hover': {
                               color: '#784cfb'
                            }

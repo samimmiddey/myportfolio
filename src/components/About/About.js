@@ -29,31 +29,26 @@ const About = () => {
       <Box
          id='about'
          sx={{
-            position: 'relative'
+            backgroundColor: '#f8f6fe'
          }}
       >
          <Box
             className='container'
             sx={theme => ({
-               // marginTop: '15rem',
                padding: '9rem 2rem',
                display: 'grid',
                gridTemplateColumns: 'repeat(2, 1fr)',
                minHeight: '100px',
                [theme.breakpoints.down('xl')]: {
-                  // marginTop: '12rem',
                   padding: '8rem 2rem',
                },
                [theme.breakpoints.down('lg')]: {
-                  // marginTop: '10rem',
                   padding: '7rem 2rem',
                },
                [theme.breakpoints.down('md')]: {
-                  // marginTop: '8rem',
                   padding: '6rem 2rem'
                },
                [theme.breakpoints.down('sm')]: {
-                  // marginTop: '6rem',
                   padding: '5rem 1rem',
                   gridTemplateColumns: 'none',
                   gridTemplateRows: 'repeat(2, 1fr)'
@@ -184,19 +179,6 @@ const About = () => {
                />
             </Box>
          </Box>
-         <Box
-            sx={{
-               position: 'absolute',
-               top: 0,
-               left: 0,
-               right: 0,
-               bottom: 0,
-               height: '100%',
-               width: '100%',
-               backgroundColor: '#f8f6fe',
-               zIndex: -1
-            }}
-         />
       </Box>
    );
 };
