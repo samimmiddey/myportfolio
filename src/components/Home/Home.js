@@ -35,24 +35,26 @@ const Home = () => {
       >
          <Box
             sx={theme => ({
-               paddingTop: '13rem',
+               paddingTop: '70px',
+               minHeight: '100vh',
                display: 'grid',
                gridTemplateColumns: 'repeat(2, 1fr)',
                alignItems: 'center',
                [theme.breakpoints.down('xl')]: {
-                  paddingTop: '12rem',
+                  // paddingTop: '12rem',
                },
                [theme.breakpoints.down('lg')]: {
-                  paddingTop: '10rem',
+                  // paddingTop: '10rem',
                },
                [theme.breakpoints.down('md')]: {
-                  paddingTop: '9rem',
+                  // paddingTop: '7rem',
+                  gridTemplateColumns: 'none',
+                  paddingTop: 0,
+                  // gridTemplateRows: '1fr 1fr',
+                  rowGap: '2rem'
                },
                [theme.breakpoints.down('sm')]: {
-                  paddingTop: '7rem',
-                  gridTemplateColumns: 'none',
-                  gridTemplateRows: '1fr 1fr',
-                  rowGap: '2rem'
+                  minHeight: 'calc(100vh - 60px)'
                }
             })}
          >
@@ -62,8 +64,9 @@ const Home = () => {
                   flexDirection: 'column',
                   alignItems: 'flex-start',
                   rowGap: '2rem',
-                  [theme.breakpoints.down('sm')]: {
-                     rowGap: '1.5rem'
+                  [theme.breakpoints.down('md')]: {
+                     rowGap: '1.5rem',
+                     height: '100%'
                   }
                })}
             >
@@ -79,10 +82,13 @@ const Home = () => {
                         fontSize: '2.5rem'
                      },
                      [theme.breakpoints.down('md')]: {
-                        fontSize: '2rem'
+                        // fontSize: '2rem'
                      },
                      [theme.breakpoints.down('sm')]: {
-                        // fontSize: '1.5rem'
+                        fontSize: '2rem'
+                     },
+                     [theme.breakpoints.down(350)]: {
+                        fontSize: '1.5rem'
                      }
                   })}
                >
@@ -121,13 +127,54 @@ const Home = () => {
                   height={height}
                   icon={<DownloadIcon sx={{ marginLeft: '10px' }} />}
                />
+               <Box
+                  sx={theme => ({
+                     marginTop: '2rem',
+                     display: 'flex',
+                     alignItems: 'center',
+                     columnGap: '10px',
+                     [theme.breakpoints.down('lg')]: {
+
+                     },
+                     [theme.breakpoints.down('md')]: {
+
+                     },
+                     [theme.breakpoints.down('sm')]: {
+                        marginTop: '1rem',
+                     }
+                  })}
+               >
+                  <MouseOutlinedIcon sx={{ color: '#784cfb' }} />
+                  <Typography
+                     sx={theme => ({
+                        color: 'text.secondary',
+                        fontWeight: 500,
+                        [theme.breakpoints.down('sm')]: {
+                           fontSize: '13px'
+                        }
+                     })}
+                  >
+                     Scroll Down
+                  </Typography>
+                  <ArrowDownwardIcon
+                     sx={{
+                        color: '#784cfb',
+                        transition: '1s ease',
+                        transform: scroll ? 'translateY(10px)' : 'translateY(0)'
+                     }}
+                  />
+               </Box>
             </Box>
             <Box
                sx={theme => ({
+                  [theme.breakpoints.down('md')]: {
+                     gridRow: '1 / 2',
+                     width: '60%',
+                     margin: '0 auto',
+                     alignSelf: 'end'
+                  },
                   [theme.breakpoints.down('sm')]: {
-                     gridRow: '1 / 3',
                      width: '75%',
-                     margin: '0 auto'
                   }
                })}
             >
@@ -141,43 +188,6 @@ const Home = () => {
                   alt="Hero"
                />
             </Box>
-         </Box>
-         <Box
-            sx={theme => ({
-               marginTop: '-2rem',
-               display: 'flex',
-               alignItems: 'center',
-               columnGap: '10px',
-               [theme.breakpoints.down('lg')]: {
-                  marginTop: '1rem',
-               },
-               [theme.breakpoints.down('md')]: {
-                  marginTop: '2rem',
-               },
-               [theme.breakpoints.down('sm')]: {
-                  marginTop: '3rem',
-               }
-            })}
-         >
-            <MouseOutlinedIcon sx={{ color: '#784cfb' }} />
-            <Typography
-               sx={theme => ({
-                  color: 'text.secondary',
-                  fontWeight: 500,
-                  [theme.breakpoints.down('sm')]: {
-                     fontSize: '13px'
-                  }
-               })}
-            >
-               Scroll Down
-            </Typography>
-            <ArrowDownwardIcon
-               sx={{
-                  color: '#784cfb',
-                  transition: '1s ease',
-                  transform: scroll ? 'translateY(10px)' : 'translateY(0)'
-               }}
-            />
          </Box>
       </Box>
    );

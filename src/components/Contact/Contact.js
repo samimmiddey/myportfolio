@@ -1,7 +1,8 @@
-import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react';
-import ContactForm from '../UI/ContactForm';
-import GoogleMap from '../UI/GoogleMap';
+import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
+import ContactForm from './ContactForm';
+import GoogleMap from './GoogleMap';
+import ContactMethods from './ContactMethods';
 
 const Contact = () => {
    const theme = useTheme();
@@ -71,7 +72,7 @@ const Contact = () => {
                      }
                   })}
                >
-                  Contact
+                  Contact Me
                </Typography>
                <Box
                   sx={{
@@ -102,6 +103,9 @@ const Contact = () => {
                </Typography>
             </Box>
          </Box>
+         <Box>
+            <ContactMethods />
+         </Box>
          <Grid
             container
             columnSpacing={mdWidth ? 0 : 5}
@@ -121,7 +125,7 @@ const Contact = () => {
                item xs={12} sm={12} md={6} lg={6} xl={6}
                sx={theme => ({
                   [theme.breakpoints.down('md')]: {
-                     height: '400px',
+                     height: '440px',
                      padding: '0 1rem'
                   }
                })}

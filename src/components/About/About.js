@@ -35,25 +35,25 @@ const About = () => {
          <Box
             className='container'
             sx={theme => ({
-               marginTop: '15rem',
+               // marginTop: '15rem',
                padding: '9rem 2rem',
                display: 'grid',
                gridTemplateColumns: 'repeat(2, 1fr)',
                minHeight: '100px',
                [theme.breakpoints.down('xl')]: {
-                  marginTop: '12rem',
+                  // marginTop: '12rem',
                   padding: '8rem 2rem',
                },
                [theme.breakpoints.down('lg')]: {
-                  marginTop: '10rem',
+                  // marginTop: '10rem',
                   padding: '7rem 2rem',
                },
                [theme.breakpoints.down('md')]: {
-                  marginTop: '8rem',
+                  // marginTop: '8rem',
                   padding: '6rem 2rem'
                },
                [theme.breakpoints.down('sm')]: {
-                  marginTop: '6rem',
+                  // marginTop: '6rem',
                   padding: '5rem 1rem',
                   gridTemplateColumns: 'none',
                   gridTemplateRows: 'repeat(2, 1fr)'

@@ -3,7 +3,10 @@ import { createContext, useReducer } from "react";
 export const uiContext = createContext();
 
 const initialState = {
-   showDrawer: false
+   showDrawer: false,
+   showSnackbar: false,
+   snackbarMessage: '',
+   loading: false
 }
 
 const uiReducer = (state, action) => {
@@ -12,6 +15,17 @@ const uiReducer = (state, action) => {
          return {
             ...state,
             showDrawer: !state.showDrawer
+         }
+      case 'SHOW_SNACKBAR':
+         return {
+            ...state,
+            showSnackbar: action.value.value,
+            snackbarMessage: action.value.text
+         }
+      case 'LOADING':
+         return {
+            ...state,
+            loading: action.value
          }
       default:
          return {
@@ -27,9 +41,22 @@ export const UIContextProvider = ({ children }) => {
       dispatch({ type: 'TOGGLE_DRAWER' });
    }
 
+   const setShowSnackbar = (value) => {
+      dispatch({ type: 'SHOW_SNACKBAR', value: value });
+   }
+
+   const setLoading = (value) => {
+      dispatch({ type: 'LOADING', value: value });
+   }
+
    const createContext = {
       showDrawer: state.showDrawer,
-      toggleDrawer: toggleDrawer
+      showSnackbar: state.showSnackbar,
+      snackbarMessage: state.snackbarMessage,
+      loading: state.loading,
+      toggleDrawer: toggleDrawer,
+      setShowSnackbar: setShowSnackbar,
+      setLoading: setLoading
    }
 
    return (

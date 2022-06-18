@@ -64,24 +64,24 @@ const Testimonial = () => {
          <Box
             className='container'
             sx={theme => ({
-               padding: '9rem 2rem',
+               padding: '9rem 2rem 184px 2rem',
                display: 'flex',
                flexDirection: 'column',
                rowGap: '3rem',
                [theme.breakpoints.down('xl')]: {
-                  padding: '8rem 2rem',
+                  padding: '8rem 2rem 168px 2rem',
                   rowGap: '2.75rem'
                },
                [theme.breakpoints.down('lg')]: {
-                  padding: '7rem 2rem',
+                  padding: '7rem 2rem 152px 2rem',
                   rowGap: '2.5rem'
                },
                [theme.breakpoints.down('md')]: {
-                  padding: '6rem 2rem',
+                  padding: '6rem 2rem 136px 2rem',
                   rowGap: '2.25rem'
                },
                [theme.breakpoints.down('sm')]: {
-                  padding: '5rem 1rem',
+                  padding: '5rem 1rem 110px 1rem',
                   rowGap: '2rem'
                }
             })}
