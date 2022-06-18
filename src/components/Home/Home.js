@@ -12,7 +12,7 @@ const Home = () => {
    const theme = useTheme();
    const xlWidth = useMediaQuery(theme.breakpoints.down('xl'));
    const mdWidth = useMediaQuery(theme.breakpoints.down('md'));
-   const smWidth = useMediaQuery(theme.breakpoints.down(500));
+   // const smWidth = useMediaQuery(theme.breakpoints.down(500));
 
    const height = xlWidth && !mdWidth ? '45px' : xlWidth && mdWidth ? '40px' : '50px';
 
@@ -40,20 +40,17 @@ const Home = () => {
                display: 'grid',
                gridTemplateColumns: 'repeat(2, 1fr)',
                alignItems: 'center',
-               [theme.breakpoints.down('xl')]: {
-                  // paddingTop: '12rem',
-               },
-               [theme.breakpoints.down('lg')]: {
-                  // paddingTop: '10rem',
-               },
                [theme.breakpoints.down('md')]: {
-                  // paddingTop: '7rem',
-                  gridTemplateColumns: 'none',
-                  paddingTop: 0,
-                  // gridTemplateRows: '1fr 1fr',
-                  rowGap: '2rem'
+                  minHeight: 0,
+                  padding: '9rem 0'
                },
                [theme.breakpoints.down('sm')]: {
+                  padding: 0,
+                  minHeight: '100vh',
+                  gridTemplateColumns: 'none',
+                  rowGap: '2rem'
+               },
+               [theme.breakpoints.down(500)]: {
                   minHeight: 'calc(100vh - 60px)'
                }
             })}
@@ -75,17 +72,18 @@ const Home = () => {
                   sx={theme => ({
                      fontWeight: 700,
                      fontSize: '3.5rem',
+                     marginTop: '1rem',
                      [theme.breakpoints.down('xl')]: {
-                        fontSize: '3rem'
+                        fontSize: '3rem',
                      },
                      [theme.breakpoints.down('lg')]: {
                         fontSize: '2.5rem'
                      },
                      [theme.breakpoints.down('md')]: {
-                        // fontSize: '2rem'
+                        fontSize: '2rem',
                      },
                      [theme.breakpoints.down('sm')]: {
-                        fontSize: '2rem'
+                        marginTop: 0
                      },
                      [theme.breakpoints.down(350)]: {
                         fontSize: '1.5rem'
@@ -120,7 +118,7 @@ const Home = () => {
                      }
                   })}
                >
-                  {!smWidth && 'WEB DESIGNER |'} FRONT END DEVELOPER
+                  {!mdWidth && 'WEB DESIGNER |'} FRONT END DEVELOPER
                </Typography>
                <PrimaryButton
                   text='Download CV'
@@ -133,14 +131,11 @@ const Home = () => {
                      display: 'flex',
                      alignItems: 'center',
                      columnGap: '10px',
-                     [theme.breakpoints.down('lg')]: {
-
-                     },
                      [theme.breakpoints.down('md')]: {
-
+                        marginTop: '1.5rem',
                      },
                      [theme.breakpoints.down('sm')]: {
-                        marginTop: '1rem',
+                        marginTop: '1.25rem',
                      }
                   })}
                >
@@ -167,14 +162,11 @@ const Home = () => {
             </Box>
             <Box
                sx={theme => ({
-                  [theme.breakpoints.down('md')]: {
+                  [theme.breakpoints.down('sm')]: {
                      gridRow: '1 / 2',
-                     width: '60%',
+                     width: '75%',
                      margin: '0 auto',
                      alignSelf: 'end'
-                  },
-                  [theme.breakpoints.down('sm')]: {
-                     width: '75%',
                   }
                })}
             >

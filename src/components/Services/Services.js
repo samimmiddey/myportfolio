@@ -189,7 +189,8 @@ const Services = () => {
                         <Typography
                            variant='h6'
                            sx={{
-                              fontWeight: 700
+                              fontWeight: 700,
+                              textAlign: 'center'
                            }}
                         >
                            {item.title}
